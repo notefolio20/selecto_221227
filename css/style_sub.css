@@ -1,0 +1,146 @@
+@charset 'utf-8';
+
+/* reset for pc */
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m::after {content: ' ';}
+
+
+
+/* 전역 변수 설정 */
+:root {
+  --header-height: 100px;
+  --color-mainkey: #ff4713;
+}
+
+
+
+/* header */
+body {color: var(--color-mainkey); background: #f7f6f3;}
+#wrapper {min-width: 1024px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; background-color: rgba(0, 0, 0, 0.6); color: #fff; font-size: 16px; transition: top 0.3s; z-index: 100000;}
+#skip-nav:focus {top: 0;}
+#ir-hidden {line-height:0; font-size:1px; overflow:hidden;}
+
+#header {position: relative; height: var(--header-height); background-color: #fff; z-index: 1000; padding: 0 35px; }
+#header > div.container {position: relative; max-width: 1400px; height: 100%; margin: 0 auto;}
+#header h1 {position: absolute; left: 0; top: 50%; transform: translate(0, -50%);}
+#header h1 img {width: 130px;}
+
+#gnb {position: absolute; left: 300px; top: 0; font-size: 18px; font-weight: 500; }
+#gnb > ul {text-align: center; width: 700px; display: flex; justify-content: space-between;}
+#gnb > ul > li > a {display: block; position: relative; height: 100%; line-height: var(--header-height);}
+#gnb > ul > li > ul > li {font-size: 16px; font-weight: 500; display: none;}
+
+#header div.top_menu {position: absolute; right: 0; top: 50%; transform: translate(0, -50%);}
+#header div.top_menu > ul {float: left; position: relative;}
+#header div.top_menu > ul + ul {padding-left: 10px;}
+#header div.top_menu > ul.link_founded {display: block; border-radius: 50px; padding: 10px 25px; margin-right: 10px; color: #fff; background-color: var(--color-mainkey);}
+#header div.top_menu > ul > a > img {margin-top: 5px;}
+
+
+
+/* sns */
+#sns_wrap {width: 100%; text-align: center; margin-top: 300px;}
+#sns_wrap > div.sns_title {display: flex; justify-content: center; gap: 10px; font-size: 60px; font-weight: 700; }
+#sns_wrap > div.sns_title > img {vertical-align: bottom; transform: translateY(3px);}
+#sns_wrap > div.sns_img {max-width: 100%; margin: 100px 0;}
+#sns_wrap > div.sns_img > div.sns_img_inner {display: flex; justify-content: center; gap: 20px;}
+#sns_wrap > div.sns_img > div.sns_img_inner > img {width: 21%;}
+
+
+
+/* footer  */
+footer {position: relative;}
+#footer {padding: 80px 0; color: #fff; font-family: 'SF-Pro'; font-size: 14px; text-align: center; background-color: var(--color-mainkey);}
+#totop {position: absolute; text-align: center; top: 70px; right: 100px; cursor: pointer;}
+#totop div.totop { width: 50px; height: 50px;}
+#totop a > div.totop {border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 50px; margin-bottom: 5px;}
+#totop a > div.totop > img {width: 65%; transform: translateY(10px);}
+#totop a > span {color: #fff; font-size: 15px;}
+#footer div.sns_logo > img {padding: 45px 35px; vertical-align: bottom;}
+#footer p.person {font-size: 16px; font-weight: 500; margin-bottom: 50px;}
+#footer div.footer_info > span,
+#footer div.footer_info > ul {padding-top: 10px;}
+#footer div.footer_info > span:first-child::after, 
+#footer div.footer_info ul > li + li::before {content: ' |'; padding: 0 10px; opacity: 0.3; vertical-align:top;}
+#footer div.footer_info > ul > li {display: inline-block;}
+#footer p:last-child{margin-top: 100px; font-size: 13px;}
+
+
+
+/* sub - brand */
+#main section#story {display: grid; grid-template-columns: 1fr 1fr;}
+#main section#story > div:nth-child(1) {background: url(../images/sub/c-brandstory-img1.png) no-repeat center center / cover;}
+#main section#story > div:nth-child(3) {background: url(../images/sub/c-brandstory-img2.png) no-repeat center center / cover;}
+#main section#story > div:nth-child(2),
+#main section#story > div:nth-child(4) {padding: 80px 110px;}
+#main section#story div.story_title p:first-child {font-size: 65px; font-weight: 700; padding-bottom: 70px;}
+#main section#story div.story_title p:last-child {font-size: 48px; line-height: 64px; font-weight: 700; padding-bottom: 35px;}
+#main section#story div.story_txt {font-size: 18px; line-height: 28px; font-weight: 400;}
+#main section#story div.story_txt p {padding-bottom: 40px;}
+#main section#story div.story_txt > p:last-child {padding-bottom: 140px;}
+#main section#video {width: 90%; margin: 0 auto;}
+#main section#video > iframe {margin: 150px 0;}
+
+
+
+/* sub - menu */
+body.sub #main section#sub_menu_head {width: 1400px; margin: 0 auto; padding-top: 75px;}
+body.sub #main section#sub_menu_head h3 {font-size: 65px; font-weight: 700;  text-transform: uppercase; padding: 15px 0 50px;}
+body.sub #main section#sub_menu_head div.menu_tab {display: flex; justify-content: center; align-items: center; font-size: 23px; font-weight: 700;}
+body.sub #main section#sub_menu_head div.menu_tab a {display: inline-block; padding-top: 10px; margin: 15px 20px 50px; border-top: 1px solid var(--color-mainkey); opacity: 0.4; letter-spacing: -0.5px;}
+body.sub #main section#sub_menu_head div.menu_tab a.on {opacity: 1;}
+
+body.sub #main section#menu_list {width: 1200px; margin: 0 auto; padding-top: 55px;}
+body.sub #main section#menu_list div.menu_thumb ul {display: grid; grid-template-columns: repeat(4, 224px); justify-content: space-between;}
+body.sub #main section#menu_list div.menu_thumb ul li a {display: block; width: 224px; height: 224px; border-radius: 50%; transition: background 0.45s;}
+body.sub #main section#menu_list div.menu_thumb ul li a:hover {background: rgba(255, 71, 19, 0.1);}
+body.sub #main section#menu_list div.menu_thumb ul li a > img {width: inherit; height: inherit; object-fit: contain; border-radius: 50%;}
+body.sub #main section#menu_list div.menu_thumb ul li p {text-align: center; font-size: 22px; font-weight: 500; padding: 20px 0 100px;}
+body.sub #main section#menu_list div.pagination {width: 100%; text-align: center; margin-bottom: 200px;}
+body.sub #main section#menu_list div.pagination > a {display: inline-block; width: 35px; height: 35px; border-radius: 50%; text-align: center; color: #fff; background-color: var(--color-mainkey); font-size: 12px;}
+body.sub #main section#menu_list div.pagination > a span{vertical-align: -10px; }
+
+
+/* sub - store */
+body.sub #main section#store_info {width: 1200px; margin: 0 auto;}
+body.sub #main div.store_map {display: flex; width: 100%; border-top: solid 1px #dfdfe0; border-bottom: solid 1px #dfdfe0;}
+body.sub #main div.store_map div.map_left {width: 50%; height: 450px; background-color: #f2f1ec; background: url(../images/sub/c-location-map.png) no-repeat center center / cover;}
+body.sub #main div.store_map div.map_right {width: 50%; padding: 70px 100px;}
+body.sub #main div.store_map div.map_right div.box_top01 {display: flex;}
+body.sub #main div.store_map div.map_right div.box_top02 {display: flex;}
+
+
+
+/* sub - whatsnew */
+body.sub #main section#news_list {width: 1200px; margin: 0 auto; padding-top: 55px;}
+body.sub #main section#news_list div.news_thumb ul {display: grid; grid-template-columns: repeat(4, 270px); justify-content: space-between;}
+body.sub #main section#news_list div.news_thumb ul li a {display: block; width: 270px; height: 270px; transition: background 0.45s;}
+body.sub #main section#news_list div.news_thumb ul li {position: relative;}
+body.sub #main section#news_list div.news_thumb ul li a:hover {background: rgba(255, 71, 19, 0.1);}
+body.sub #main section#news_list div.news_thumb ul li a > img {width: inherit; height: inherit; object-fit: contain;}
+body.sub #main section#news_list div.news_thumb ul li p {font-size: 15px; font-weight: 500; padding-top: 20px;}
+body.sub #main section#news_list div.news_thumb ul li span {display: inline-block; font-size: 14px; font-weight: 400; padding-bottom:100px;}
+/* body.sub #main section#news_list div.event_end > img:first-child {width: 50%;} */
+body.sub #main section#news_list div.event_end > img.img_end {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; height: 50%;}
+
+
+
+
+body.sub #main section#news_list div.pagination {width: 100%; text-align: center; margin-bottom: 200px;}
+body.sub #main section#news_list div.pagination > a {display: inline-block; width: 35px; height: 35px; border-radius: 50%; text-align: center; color: #fff; background-color: var(--color-mainkey); font-size: 12px;}
+body.sub #main section#news_list div.pagination > a span{vertical-align: -10px; }
+
+
+/* background: url(../images/sub/event-end.png) no-repeat center center / cover; background-color: rgba(0, 0, 0, 0.6);*/
+
+
+
+
+
+
+
+
+
+
